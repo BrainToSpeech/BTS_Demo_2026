@@ -58,9 +58,15 @@ data/processed/260602_sub1_hjlee_raw/
 └── preprocess_meta.json
 ```
 
-The script extracts epochs from `-0.2` to `4.25` seconds, applies baseline
-correction, crops them to `0` to `4.25` seconds, and saves EEG and EMG
-separately.
+The script separates EEG and EMG channels from the integrated XDF recording.
+It applies a `0.5 Hz` high-pass filter and `60 Hz` harmonic notch filters to
+both signals. EEG is re-referenced to `FCz`, after which the `FCz` channel is
+removed.
+
+Epochs are extracted from `-0.2` to `4.25` seconds around triggers `101` to
+`105`. Baseline correction is applied using `-0.2` to `0.0` seconds, and the
+epochs are cropped to `0.0` to `4.25` seconds. The script then saves EEG and
+EMG epochs separately and generates the five-class and ten binary label files.
 
 ## 2. Train Sliding Windows
 
