@@ -1,0 +1,31 @@
+{
+  "args": {
+    "data_dir": "/home/jihoon/workspace/Demo_binary/data/processed/260602_sub1_hjlee_raw",
+    "input_file": "X_eeg_raw.npy",
+    "checkpoint_root": "/home/jihoon/workspace/Demo_binary/checkpoints_eegnet_2s",
+    "epochs": 2000,
+    "batch_size": 8,
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "patience": 200,
+    "seed": 42,
+    "val_test_ratio": 0.2,
+    "start_s": 0.0,
+    "end_s": null
+  },
+  "input_shape": [
+    500,
+    63,
+    4001
+  ],
+  "sfreq": 2000.0,
+  "time_range_s": [
+    0.0,
+    2.0
+  ],
+  "split_sizes": [
+    300,
+    100,
+    100
+  ]
+}
